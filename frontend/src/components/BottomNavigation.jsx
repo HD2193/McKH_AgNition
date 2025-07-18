@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const BottomNavigation = () => {
   const location = useLocation();
+  const { translate } = useLanguage();
   
   const navItems = [
-    { path: '/', icon: '🏠', label: 'Home', labelHindi: 'होम' },
-    { path: '/my-farm', icon: '🌾', label: 'My Crops', labelHindi: 'मेरी फसल' },
-    { path: '/market-prices', icon: '📊', label: 'Market', labelHindi: 'बाजार' },
-    { path: '/government-schemes', icon: '🏛️', label: 'Schemes', labelHindi: 'योजनाएं' },
-    { path: '/crop-diagnosis', icon: '👤', label: 'Profile', labelHindi: 'प्रोफाइल' }
+    { path: '/', icon: '🏠', labelKey: 'nav.home' },
+    { path: '/my-farm', icon: '🌾', labelKey: 'nav.myFarm' },
+    { path: '/market-prices', icon: '📊', labelKey: 'nav.market' },
+    { path: '/government-schemes', icon: '🏛️', labelKey: 'nav.schemes' },
+    { path: '/crop-diagnosis', icon: '👤', labelKey: 'nav.profile' }
   ];
 
   return (
@@ -21,7 +23,7 @@ const BottomNavigation = () => {
           className={`kisan-nav-item ${location.pathname === item.path ? 'active' : ''}`}
         >
           <div className="kisan-nav-icon">{item.icon}</div>
-          <div className="kisan-nav-text">{item.label}</div>
+          <div className="kisan-nav-text">{translate(item.labelKey)}</div>
         </Link>
       ))}
     </div>
