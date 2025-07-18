@@ -1,0 +1,336 @@
+/* Kisan AI Global Styles */
+:root {
+  --kisan-green: #2d5016;
+  --kisan-light-green: #4ade80;
+  --kisan-brown: #8b4513;
+  --kisan-light-brown: #d2b48c;
+  --kisan-yellow: #fbbf24;
+  --kisan-light-yellow: #fef3c7;
+  --kisan-gray: #6b7280;
+  --kisan-light-gray: #f9fafb;
+}
+
+.kisan-container {
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 0;
+  background: linear-gradient(to bottom, var(--kisan-light-yellow), var(--kisan-light-gray));
+  min-height: 100vh;
+}
+
+.kisan-header {
+  background: linear-gradient(135deg, var(--kisan-green), var(--kisan-light-green));
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.kisan-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.kisan-voice-button {
+  background: var(--kisan-yellow);
+  color: var(--kisan-green);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+}
+
+.kisan-voice-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+}
+
+.kisan-voice-button.listening {
+  background: #ef4444;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.kisan-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.kisan-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.kisan-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.kisan-quick-access {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.kisan-quick-access:hover {
+  border-color: var(--kisan-light-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.kisan-quick-access-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.kisan-quick-access-text {
+  font-weight: 600;
+  color: var(--kisan-green);
+  font-size: 0.9rem;
+}
+
+.kisan-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.75rem 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.kisan-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: var(--kisan-gray);
+  text-decoration: none;
+}
+
+.kisan-nav-item:hover, .kisan-nav-item.active {
+  color: var(--kisan-green);
+  background: var(--kisan-light-yellow);
+}
+
+.kisan-nav-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.kisan-nav-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.kisan-search-bar {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 25px;
+  padding: 0.75rem 1rem;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.kisan-search-bar:focus-within {
+  border-color: var(--kisan-light-green);
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
+}
+
+.kisan-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+}
+
+.kisan-price-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  margin: 0.5rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.kisan-price-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.kisan-crop-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.kisan-crop-info {
+  flex: 1;
+}
+
+.kisan-crop-name {
+  font-weight: 600;
+  color: var(--kisan-green);
+  margin-bottom: 0.25rem;
+}
+
+.kisan-crop-price {
+  color: var(--kisan-gray);
+  font-size: 0.9rem;
+}
+
+.kisan-price-range {
+  text-align: right;
+  font-weight: 700;
+  color: var(--kisan-green);
+}
+
+.kisan-scheme-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.kisan-scheme-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.kisan-scheme-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.kisan-scheme-content {
+  padding: 1rem;
+}
+
+.kisan-scheme-title {
+  font-weight: 600;
+  color: var(--kisan-green);
+  margin-bottom: 0.5rem;
+}
+
+.kisan-scheme-description {
+  color: var(--kisan-gray);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.kisan-calendar {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.kisan-task-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--kisan-light-yellow);
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.kisan-task-item:hover {
+  background: var(--kisan-yellow);
+}
+
+.kisan-task-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid var(--kisan-green);
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.kisan-task-checkbox.checked {
+  background: var(--kisan-green);
+  color: white;
+}
+
+.kisan-task-text {
+  flex: 1;
+  color: var(--kisan-green);
+  font-weight: 500;
+}
+
+.kisan-task-time {
+  color: var(--kisan-gray);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 640px) {
+  .kisan-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+  
+  .kisan-quick-access {
+    padding: 1rem;
+    min-height: 80px;
+  }
+  
+  .kisan-quick-access-icon {
+    font-size: 1.5rem;
+  }
+  
+  .kisan-quick-access-text {
+    font-size: 0.8rem;
+  }
+}
